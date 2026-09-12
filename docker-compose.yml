@@ -1,0 +1,11 @@
+services:
+  trade-system:
+    build: .
+    container_name: trade-tool
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+    # 如需调整启动参数：
+    # command: ["python", "main.py", "--once"]
